@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scraping Web</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h2>Web Scraping de Productos</h2>
+        <form action="/" method="post">
+            <label for="url_categoria">URL de la Categoría:</label>
+            <input type="text" id="url_categoria" name="url_categoria" required>
+            
+            <label for="num_paginas">Número de Páginas:</label>
+            <input type="number" id="num_paginas" name="num_paginas" min="1" required>
+            
+            <button type="submit">Iniciar Scraping</button>
+        </form>
+
+        {% if mensaje %}
+        <p class="mensaje">{{ mensaje }}</p>
+        {% endif %}
+    </div>
+</body>
+</html>
